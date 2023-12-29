@@ -1,4 +1,6 @@
 import express from "express";
+import cors from "cors";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
@@ -18,5 +20,14 @@ app.on("error", (error) =>{
     console.log("");
     throw error;
  });
+
+
+ //routes import 
+ import userRouter from "./routes/user.routes.js";
+
+ //routes declartion
+ app.use("/api/v1/users", userRouter);
+
+ // https://www.localhost:3000/api/v1/users/register
 
 export {app}

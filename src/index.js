@@ -1,7 +1,7 @@
 import donenv from "dotenv";
 import express from "express";
 import connectDB from "./db/db.js";
-import app from "./app.js";
+import {app} from "./app.js";
 
 donenv.config({path:"./env"});
 
