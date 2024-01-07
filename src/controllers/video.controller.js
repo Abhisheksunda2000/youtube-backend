@@ -55,4 +55,32 @@ const uploadVideo = asyncHandler(async(req,res) => {
     }
 });
 
-export {uploadVideo}
+const getVideo = asyncHandler( async (req,res) =>{
+    const {videoId} = req.params;
+
+    const video = await Video.findOne(videoId);
+
+    return res
+    .status(200)
+    .json(
+        new ApiResponse(200, video, "Video Fetched Successfully")
+    );
+
+});
+
+const updateVideoDetails = asyncHandler( async(req,res) =>{
+
+});
+
+// getvideo information
+// updatevideo information
+// searchvideo information
+// delete video information
+// get video thumbnail information
+// particular users video information
+// videoanalytics information 
+export {
+    uploadVideo,
+    getVideo,
+    updateVideoDetails
+}

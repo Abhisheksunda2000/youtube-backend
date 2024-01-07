@@ -30,7 +30,7 @@ const registerUser = asyncHandler( async (req,res) => {
 
    if ([fullName, email, password, username].some((field) => field === undefined || field === null || field.trim() === "")) {
      throw new ApiError(400, "All fields are required");
- }
+  }
  
 
    const existedUser = await User.findOne({
@@ -131,8 +131,6 @@ const loginUser = asyncHandler( async (req,res) => {
           httpOnly:true,
           secure:true
      }
-
-
 
      return res
      .status(201)
